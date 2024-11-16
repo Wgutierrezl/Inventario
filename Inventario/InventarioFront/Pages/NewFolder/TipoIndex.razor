@@ -1,0 +1,53 @@
+﻿@page "/tipos"
+@inject IServiciosTipo servicioTipo
+
+<h3>Tipos de Productos</h3>
+
+<div class="mb-3">
+    <a class="btn btn-primary" href="/tipos/create">Nuevo Tipo</a>
+</div>
+
+@if (Lista != null)
+{
+    <Body>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Tipo</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var tipo in Lista!)
+                {
+                    <tr>
+                        <td>
+                            @tipo.Name
+                        </td>
+                        <td>
+                            <a class="btn btn-warning">Editar</a>
+                            <button class="btn btn-danger">Borrar</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </Body>
+}
+else
+{ 
+    <p>Iniciando carga de tipos de productos...</p>
+@* <div class="align-items-center">
+<img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921" />
+</div> *@
+}
+
+@code {
+    public List<Tipo>? Lista { get; set; }
+
+    protected async override Task OnInitializedAsync()
+    {
+        var responseHppt = await servicioTipo.GetTipos<List<Tipo>>("api/Tipos");
+        Lista = responseHppt.Response;
+    }
+}

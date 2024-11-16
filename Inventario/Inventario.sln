@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InventarioBack", "Inventari
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InventarioControlador", "InventarioControlador\InventarioControlador.csproj", "{90FC74F9-3B64-4132-BD4F-E345748BBA3F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventarioFront", "InventarioFront\InventarioFront.csproj", "{F89A225F-F8FF-4F69-8CC6-18C485CB7BCC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InventarioFront", "InventarioFront\InventarioFront.csproj", "{F89A225F-F8FF-4F69-8CC6-18C485CB7BCC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
